@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>first</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown active"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li class="active"><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul>
+					</li>
+					<li><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="#tab-chrome">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId"><b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/user/logout/">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">班级:</a></li>
+				</ul>
+				<ul class="nav nav-sidebar" id="classList2">
+					<li class="active"><a href="#">软件卓越1301班</a></li>
+					<li><a href="#">信息安全1301班</a></li>
+					<li><a href="#">信息安全1302班</a></li>
+					<li><a href="#">信息安全1303班</a></li>
+					<li><a href="#">信息安全1304班</a></li>
+					<li><a href="#">信息安全1305班</a></li>
+					<li><a href="#">医学影像1301班</a></li>
+					<li><a href="#">医学影像1302班</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="add-class.html" id="look-log">添加班级</a></li>
+
+				</ul>
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">基本信息</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="className">卓越软软件1301</h3>
+							</div>
+							<div class="panel-body">
+							<div id="classPeo">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+										<th>#</th>
+											<th id="tudNum">学号</th>
+											<th>姓名</th>
+											<th>性别</th>
+											<th>电话</th>
+											<th>寝室</th>
+											<th>详细信息</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+										<td>1</td>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>女</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td><a class="btn btn-primary" href="first-detail.html"
+												role="button" id="lookDtail">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>2</td>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>男</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>3</td>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>男</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>4</td>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>女</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>5</td>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>男</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>6</td>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>男</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>7</td>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>女</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>8</td>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>男</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+										<tr>
+										<td>9</td>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>男</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td><a class="btn btn-primary" href="#" role="button">查看详细&raquo;</a></td>
+										</tr>
+									</tbody>
+								</table>
+               </div>
+								
+								<p>
+									<a class="btn  btn-danger"  role="button" type="button" id="but-addStudent">添加学生&raquo;</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		
+		
+		var html=sessionStorage.username+"<b class='caret'></b>";
+		  $("#userId").html(html);
+		  
+				$.ajax({ 
+				    type: "post", 
+					url: '/sixthgroup/gradeController/selectAll.do',
+					dataType: "json",
+					async: false,
+					success: function(data){
+						if (data.result) { 
+							if(data.gradeList)
+								{
+								
+								$("#classList1").empty();
+								for(var i=0;i<data.gradeList.length;i++)
+									{
+//									   if(i===0){
+//										   $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a href='first.html'>"+data.gradeList[i].gradName+"</a></li>");
+//										   }
+//									   else{
+									    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+//									       }
+									}
+								$("#classList2").empty();
+								for(var i=0;i<data.gradeList.length;i++)
+									{
+									$("#classList2").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+									}
+								}
+							} 						
+					},
+					error: function(jqXHR){     
+					   alert("发生错误：" + jqXHR.status);  
+					},     
+				});
+				
+				$.ajax({ 
+				    type: "post", 
+					url: '/sixthgroup/specialInfoClassController/selectAll.do',
+					dataType: "json",
+					async: false,
+					success: function(data){
+						if (data.result) { 
+							if(data.list)
+								{
+								$("#speTypeList1").empty();
+								for(var i=0;i<data.list.length;i++)
+									{
+									    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+									}
+							}
+						}
+					},
+					error: function(jqXHR){     
+					   alert("发生错误：" + jqXHR.status);  
+					},     
+				});
+				
+				
+			  
+	});
+
+
+</script>
+<script type="text/javascript">
+
+	function getClassList(classId,str){
+		  $.ajax({ 
+			    type: "POST", 	
+				url: "/sixthgroup/studentController/selectByGradeid.do",
+				data: {
+					gradeId: classId,
+				},
+				dataType: "json",
+				async: false,
+				success: function(data){
+					
+ 					if (data.result) { 
+ 						myClassId=classId;
+ 						$("#className").html(str);
+ 						
+ 						$("#classPeo").children().remove();
+ 						
+						var htmlStr="<table class='table table-striped table-hover'><thead><tr><th>#</th><th id='tudNum'>学号</th><th>姓名</th><th>性别</th><th>电话</th><th>寝室</th><th>详细信息</th></tr></thead><tbody>";
+						for(var i=0;i<data.studList.length;i++){
+							k=i+1;
+							var en=data.studList[i];
+ 							htmlStr+="<tr><td>"+k+"</td><td>"+en.studNum+"</td><td>"+en.studName+"</td><td>"+en.studSex+"</td><td>"+en.studTel+"</td><td>"+en.studDorimitory+"</td><td><a class='btn btn-primary but-detail' href='#' role='button' type='button' >查看详细&raquo;</a></td></tr>";
+							
+ 							}
+ 							htmlStr+="</tbody> </table>"
+							$("#classPeo").append(htmlStr);
+ 					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+		}
+	
+	
+	var fun1=function(classId,str){
+		var obj=$(".but-detail");
+		for(var i=0;i<obj.length;i++){
+			obj[i].onclick=function(){		
+			window.location.href = "first-detail.html#"+$(this).parent().parent().children().eq(1).text()+"#"+str+"#"+classId;	
+		}
+		}
+	}
+	var fun2=function(classId,str){
+		$("#but-addStudent").click(function(){
+				window.location.href = "add-student.html#"+classId+"#"+str;
+				
+			})	
+	}
+	
+	$("document").ready(function(){
+		
+		var obj=document.getElementById("classList2");
+		var classList=obj.getElementsByTagName("li");	
+		var len=classList.length;
+		for(var i=0;i<len;i++){
+			classList[i].onclick=function(){
+ 				var str=this.firstChild.innerHTML;
+			var classId=this.getAttribute("title");
+			
+			getClassList(classId,str);
+			fun1(classId,str);
+			fun2(classId,str);
+			}
+		}
+	})
+	$("document").ready(function(){
+		var obj=document.getElementById("classList2");
+		var classList=obj.getElementsByTagName("li");		
+		var len=classList.length;	
+		var str=classList[0].firstChild.innerHTML;
+		var classId=classList[0].getAttribute("title");		
+		getClassList(classId,str);
+		fun1(classId,str);
+		fun2(classId,str);
+	})	
+	$("document").ready(function(){
+		var str=window.location.hash;
+		var strs=str.split("#"); 
+		var classId=strs[1];
+		var str=strs[2];
+		if(classId&&str){
+		getClassList(classId,str);
+		fun1(classId,str);
+		fun2(classId,str);
+		}
+		
+		
+		var obj=document.getElementById("classList1");
+		var classList=obj.getElementsByTagName("li");	
+		var len=classList.length;
+		for(var i=0;i<len;i++){
+			classList[i].onclick=function(){
+ 			var str=this.firstChild.innerHTML;
+			var classId=this.getAttribute("title");
+
+			getClassList(classId,str);
+			fun1(classId,str);
+			fun2(classId,str);
+			}
+		}
+		
+	})
+$(document).ready(function(){
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+ 			var str1=this.firstChild.innerHTML;
+			var typeId1=this.getAttribute("title");
+			window.location.href = "special-info.html#"+typeId1+"#"+str1;
+			}
+		}
+	})
+	
+</script>
+</body>
+</html>

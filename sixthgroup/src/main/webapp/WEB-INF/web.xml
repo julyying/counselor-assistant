@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>mybatis</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
+	</context-param>
+	<filter>
+		<description>字符集过滤器</description>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>字符集编码</description>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<description>spring监听器</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 防止spring内存溢出监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<!-- spring mvc servlet -->
+	<servlet>
+		<description>spring mvc servlet</description>
+		<servlet-name>springMvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>spring mvc 配置文件</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/login.html</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 配置session超时时间，单位分钟 -->
+	<session-config>
+		<session-timeout>50</session-timeout>
+	</session-config>
+	<!-- 出现错误时候的页面  -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	<error-page>
+		<error-code>505</error-code>
+		<location>/505.html</location>
+	</error-page>
+	<filter>
+	    <filter-name>HiddenHttpMethodFilter</filter-name>
+	    <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>HiddenHttpMethodFilter</filter-name>
+	    <servlet-name>dbproxymanage</servlet-name>
+	</filter-mapping>
+	</web-app>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.PowerMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Power" >
+    <id column="powe_id" property="poweId" jdbcType="INTEGER" />
+    <result column="powe_name" property="poweName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    powe_id, powe_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from power
+    where powe_id = #{poweId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from power
+    where powe_id = #{poweId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Power" >
+    insert into power (powe_id, powe_name)
+    values (#{poweId,jdbcType=INTEGER}, #{poweName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Power" >
+    insert into power
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="poweId != null" >
+        powe_id,
+      </if>
+      <if test="poweName != null" >
+        powe_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="poweId != null" >
+        #{poweId,jdbcType=INTEGER},
+      </if>
+      <if test="poweName != null" >
+        #{poweName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Power" >
+    update power
+    <set >
+      <if test="poweName != null" >
+        powe_name = #{poweName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where powe_id = #{poweId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Power" >
+    update power
+    set powe_name = #{poweName,jdbcType=VARCHAR}
+    where powe_id = #{poweId,jdbcType=INTEGER}
+  </update>
+</mapper>

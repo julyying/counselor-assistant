@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.StudentMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Student" >
+    <id column="stud_id" property="studId" jdbcType="INTEGER" />
+    <result column="stud_gradeid" property="studGradeid" jdbcType="INTEGER" />
+    <result column="stud_name" property="studName" jdbcType="VARCHAR" />
+    <result column="stud_sex" property="studSex" jdbcType="VARCHAR" />
+    <result column="stud_age" property="studAge" jdbcType="VARCHAR" />
+    <result column="stud_tel" property="studTel" jdbcType="VARCHAR" />
+    <result column="stud_qq" property="studQq" jdbcType="VARCHAR" />
+    <result column="stud_address" property="studAddress" jdbcType="VARCHAR" />
+    <result column="stud_idcard" property="studIdcard" jdbcType="VARCHAR" />
+    <result column="stud_num" property="studNum" jdbcType="VARCHAR" />
+    <result column="stud_bron" property="studBron" jdbcType="DATE" />
+    <result column="stud_banknum" property="studBanknum" jdbcType="VARCHAR" />
+    <result column="stud_nation" property="studNation" jdbcType="VARCHAR" />
+    <result column="stud_dorimitory" property="studDorimitory" jdbcType="VARCHAR" />
+    <result column="stud_parentname" property="studParentname" jdbcType="VARCHAR" />
+    <result column="stud_parenttel" property="studParenttel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    stud_id, stud_gradeid, stud_name, stud_sex, stud_age, stud_tel, stud_qq, stud_address, 
+    stud_idcard, stud_num, stud_bron, stud_banknum, stud_nation, stud_dorimitory, stud_parentname, 
+    stud_parenttel
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where stud_id = #{studId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from student
+    where stud_id = #{studId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Student" >
+    insert into student (stud_id, stud_gradeid, stud_name, 
+      stud_sex, stud_age, stud_tel, 
+      stud_qq, stud_address, stud_idcard, 
+      stud_num, stud_bron, stud_banknum, 
+      stud_nation, stud_dorimitory, stud_parentname, 
+      stud_parenttel)
+    values (#{studId,jdbcType=INTEGER}, #{studGradeid,jdbcType=INTEGER}, #{studName,jdbcType=VARCHAR}, 
+      #{studSex,jdbcType=VARCHAR}, #{studAge,jdbcType=VARCHAR}, #{studTel,jdbcType=VARCHAR}, 
+      #{studQq,jdbcType=VARCHAR}, #{studAddress,jdbcType=VARCHAR}, #{studIdcard,jdbcType=VARCHAR}, 
+      #{studNum,jdbcType=VARCHAR}, #{studBron,jdbcType=DATE}, #{studBanknum,jdbcType=VARCHAR}, 
+      #{studNation,jdbcType=VARCHAR}, #{studDorimitory,jdbcType=VARCHAR}, #{studParentname,jdbcType=VARCHAR}, 
+      #{studParenttel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studId != null" >
+        stud_id,
+      </if>
+      <if test="studGradeid != null" >
+        stud_gradeid,
+      </if>
+      <if test="studName != null" >
+        stud_name,
+      </if>
+      <if test="studSex != null" >
+        stud_sex,
+      </if>
+      <if test="studAge != null" >
+        stud_age,
+      </if>
+      <if test="studTel != null" >
+        stud_tel,
+      </if>
+      <if test="studQq != null" >
+        stud_qq,
+      </if>
+      <if test="studAddress != null" >
+        stud_address,
+      </if>
+      <if test="studIdcard != null" >
+        stud_idcard,
+      </if>
+      <if test="studNum != null" >
+        stud_num,
+      </if>
+      <if test="studBron != null" >
+        stud_bron,
+      </if>
+      <if test="studBanknum != null" >
+        stud_banknum,
+      </if>
+      <if test="studNation != null" >
+        stud_nation,
+      </if>
+      <if test="studDorimitory != null" >
+        stud_dorimitory,
+      </if>
+      <if test="studParentname != null" >
+        stud_parentname,
+      </if>
+      <if test="studParenttel != null" >
+        stud_parenttel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studId != null" >
+        #{studId,jdbcType=INTEGER},
+      </if>
+      <if test="studGradeid != null" >
+        #{studGradeid,jdbcType=INTEGER},
+      </if>
+      <if test="studName != null" >
+        #{studName,jdbcType=VARCHAR},
+      </if>
+      <if test="studSex != null" >
+        #{studSex,jdbcType=VARCHAR},
+      </if>
+      <if test="studAge != null" >
+        #{studAge,jdbcType=VARCHAR},
+      </if>
+      <if test="studTel != null" >
+        #{studTel,jdbcType=VARCHAR},
+      </if>
+      <if test="studQq != null" >
+        #{studQq,jdbcType=VARCHAR},
+      </if>
+      <if test="studAddress != null" >
+        #{studAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="studIdcard != null" >
+        #{studIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="studNum != null" >
+        #{studNum,jdbcType=VARCHAR},
+      </if>
+      <if test="studBron != null" >
+        #{studBron,jdbcType=DATE},
+      </if>
+      <if test="studBanknum != null" >
+        #{studBanknum,jdbcType=VARCHAR},
+      </if>
+      <if test="studNation != null" >
+        #{studNation,jdbcType=VARCHAR},
+      </if>
+      <if test="studDorimitory != null" >
+        #{studDorimitory,jdbcType=VARCHAR},
+      </if>
+      <if test="studParentname != null" >
+        #{studParentname,jdbcType=VARCHAR},
+      </if>
+      <if test="studParenttel != null" >
+        #{studParenttel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Student" >
+    update student
+    <set >
+      <if test="studGradeid != null" >
+        stud_gradeid = #{studGradeid,jdbcType=INTEGER},
+      </if>
+      <if test="studName != null" >
+        stud_name = #{studName,jdbcType=VARCHAR},
+      </if>
+      <if test="studSex != null" >
+        stud_sex = #{studSex,jdbcType=VARCHAR},
+      </if>
+      <if test="studAge != null" >
+        stud_age = #{studAge,jdbcType=VARCHAR},
+      </if>
+      <if test="studTel != null" >
+        stud_tel = #{studTel,jdbcType=VARCHAR},
+      </if>
+      <if test="studQq != null" >
+        stud_qq = #{studQq,jdbcType=VARCHAR},
+      </if>
+      <if test="studAddress != null" >
+        stud_address = #{studAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="studIdcard != null" >
+        stud_idcard = #{studIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="studNum != null" >
+        stud_num = #{studNum,jdbcType=VARCHAR},
+      </if>
+      <if test="studBron != null" >
+        stud_bron = #{studBron,jdbcType=DATE},
+      </if>
+      <if test="studBanknum != null" >
+        stud_banknum = #{studBanknum,jdbcType=VARCHAR},
+      </if>
+      <if test="studNation != null" >
+        stud_nation = #{studNation,jdbcType=VARCHAR},
+      </if>
+      <if test="studDorimitory != null" >
+        stud_dorimitory = #{studDorimitory,jdbcType=VARCHAR},
+      </if>
+      <if test="studParentname != null" >
+        stud_parentname = #{studParentname,jdbcType=VARCHAR},
+      </if>
+      <if test="studParenttel != null" >
+        stud_parenttel = #{studParenttel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where stud_id = #{studId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Student" >
+    update student
+    set stud_gradeid = #{studGradeid,jdbcType=INTEGER},
+      stud_name = #{studName,jdbcType=VARCHAR},
+      stud_sex = #{studSex,jdbcType=VARCHAR},
+      stud_age = #{studAge,jdbcType=VARCHAR},
+      stud_tel = #{studTel,jdbcType=VARCHAR},
+      stud_qq = #{studQq,jdbcType=VARCHAR},
+      stud_address = #{studAddress,jdbcType=VARCHAR},
+      stud_idcard = #{studIdcard,jdbcType=VARCHAR},
+      stud_num = #{studNum,jdbcType=VARCHAR},
+      stud_bron = #{studBron,jdbcType=DATE},
+      stud_banknum = #{studBanknum,jdbcType=VARCHAR},
+      stud_nation = #{studNation,jdbcType=VARCHAR},
+      stud_dorimitory = #{studDorimitory,jdbcType=VARCHAR},
+      stud_parentname = #{studParentname,jdbcType=VARCHAR},
+      stud_parenttel = #{studParenttel,jdbcType=VARCHAR}
+    where stud_num = #{studNum,jdbcType=VARCHAR}
+  </update>
+  
+   <!-- 自己写的方法 -->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+  </select>
+  
+   <select id="selectByGradeId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+<!--   select 
+    <include refid="Base_Column_List" />
+    from student
+    where stud_gradeid = #{studGradeid,jdbcType=INTEGER} -->  
+    
+    select *
+	from student s
+	where s.stud_gradeid=#{studGradeid,jdbcType=INTEGER}
+  </select>
+  
+  <resultMap id="NewResultMap" type="sixth.sixthgroup.model.Student" >
+    <id column="stud_id" property="studId" jdbcType="INTEGER" />
+    <result column="stud_gradeid" property="studGradeid" jdbcType="INTEGER" />
+    <result column="stud_name" property="studName" jdbcType="VARCHAR" />
+    <result column="stud_sex" property="studSex" jdbcType="VARCHAR" />
+    <result column="stud_age" property="studAge" jdbcType="VARCHAR" />
+    <result column="stud_tel" property="studTel" jdbcType="VARCHAR" />
+    <result column="stud_qq" property="studQq" jdbcType="VARCHAR" />
+    <result column="stud_address" property="studAddress" jdbcType="VARCHAR" />
+    <result column="stud_idcard" property="studIdcard" jdbcType="VARCHAR" />
+    <result column="stud_num" property="studNum" jdbcType="VARCHAR" />
+    <result column="stud_bron" property="studBron" jdbcType="DATE" />
+    <result column="stud_banknum" property="studBanknum" jdbcType="VARCHAR" />
+    <result column="stud_nation" property="studNation" jdbcType="VARCHAR" />
+    <result column="stud_dorimitory" property="studDorimitory" jdbcType="VARCHAR" />
+    <result column="stud_parentname" property="studParentname" jdbcType="VARCHAR" />
+    <result column="stud_parenttel" property="studParenttel" jdbcType="VARCHAR" />
+     <result column="grad_name" property="gradName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="New_List" >
+    stud_id, stud_gradeid, stud_name, stud_sex, stud_age, stud_tel, stud_qq, stud_address, 
+    stud_idcard, stud_num, stud_bron, stud_banknum, stud_nation, stud_dorimitory, stud_parentname, 
+    stud_parenttel,grad_name
+  </sql>
+  
+  <select id="selectByStudNum" resultMap="NewResultMap" parameterType="java.lang.String">
+    SELECT *
+	from student s,grade g
+	where s.stud_num=#{studNum,jdbcType=VARCHAR}
+	and g.grad_id=s.stud_gradeid
+  </select>
+  <insert id="insertOneStudent" parameterType="sixth.sixthgroup.model.Student" >
+    insert into student (stud_id, stud_gradeid, stud_name, 
+      stud_sex, stud_age, stud_tel, 
+      stud_qq, stud_address, stud_idcard, 
+      stud_num, stud_bron, stud_banknum, 
+      stud_nation, stud_dorimitory)
+    values (#{studId,jdbcType=INTEGER}, #{studGradeid,jdbcType=INTEGER}, #{studName,jdbcType=VARCHAR}, 
+      #{studSex,jdbcType=VARCHAR}, #{studAge,jdbcType=VARCHAR}, #{studTel,jdbcType=VARCHAR}, 
+      #{studQq,jdbcType=INTEGER}, #{studAddress,jdbcType=VARCHAR}, #{studIdcard,jdbcType=VARCHAR}, 
+      #{studNum,jdbcType=INTEGER}, #{studBron,jdbcType=DATE}, #{studBanknum,jdbcType=INTEGER}, 
+      #{studNation,jdbcType=VARCHAR}, #{studDorimitory,jdbcType=VARCHAR})
+  </insert>
+  
+  <delete id="deleteByStudNum" parameterType="java.lang.String" >
+    delete from student
+    where stud_num = #{studNum,jdbcType=VARCHAR}
+  </delete>
+</mapper>

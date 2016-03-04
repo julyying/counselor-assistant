@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.DiaryMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Diary" >
+    <id column="diar_id" property="diarId" jdbcType="INTEGER" />
+    <result column="diar_user" property="diarUser" jdbcType="INTEGER" />
+    <result column="diar_content" property="diarContent" jdbcType="VARCHAR" />
+    <result column="diar_time" property="diarTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    diar_id, diar_user, diar_content, diar_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from diary
+    where diar_id = #{diarId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from diary
+    where diar_id = #{diarId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Diary" >
+    insert into diary (diar_id, diar_user, diar_content, 
+      diar_time)
+    values (#{diarId,jdbcType=INTEGER}, #{diarUser,jdbcType=INTEGER}, #{diarContent,jdbcType=VARCHAR}, 
+      #{diarTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Diary" >
+    insert into diary
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="diarId != null" >
+        diar_id,
+      </if>
+      <if test="diarUser != null" >
+        diar_user,
+      </if>
+      <if test="diarContent != null" >
+        diar_content,
+      </if>
+      <if test="diarTime != null" >
+        diar_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="diarId != null" >
+        #{diarId,jdbcType=INTEGER},
+      </if>
+      <if test="diarUser != null" >
+        #{diarUser,jdbcType=INTEGER},
+      </if>
+      <if test="diarContent != null" >
+        #{diarContent,jdbcType=VARCHAR},
+      </if>
+      <if test="diarTime != null" >
+        #{diarTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Diary" >
+    update diary
+    <set >
+      <if test="diarUser != null" >
+        diar_user = #{diarUser,jdbcType=INTEGER},
+      </if>
+      <if test="diarContent != null" >
+        diar_content = #{diarContent,jdbcType=VARCHAR},
+      </if>
+      <if test="diarTime != null" >
+        diar_time = #{diarTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where diar_id = #{diarId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Diary" >
+    update diary
+    set diar_user = #{diarUser,jdbcType=INTEGER},
+      diar_content = #{diarContent,jdbcType=VARCHAR},
+      diar_time = #{diarTime,jdbcType=TIMESTAMP}
+    where diar_id = #{diarId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 自己写的方法 -->
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from diary
+   	ORDER BY diar_time desc;
+  </select>
+</mapper>

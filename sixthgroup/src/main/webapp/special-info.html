@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>special-info</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul></li>
+					<li><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown active"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="special-info.html">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId">20131309 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/user/logout/">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">记录:</a></li>
+				</ul>
+				<ul class="nav nav-sidebar" id="speTypeList2">
+
+					<li class="active"><a href="special-info.html"><span class="badge pull-right">42</span><span>晚归</span></a></li>
+					<li><a href="#"><span class="badge pull-right">12</span><span>旷课</span></a></li>
+					<li><a href="#"><span class="badge pull-right">8</span><span>请假</span></a></li>
+					<li><a href="#"><span class="badge pull-right">6</span><span>2+4活动</span></a></li>
+
+				</ul>
+
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">特殊信息</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="typeName">晚归</h3>
+							</div>
+							<div class="panel-body">
+							<div  id="stuSpeciaInfo">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>学号</th>
+											<th>姓名</th>
+											<th>班级</th>
+											<th>电话</th>
+											<th>寝室</th>
+											<th>时间</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>软件卓越1301</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td>2015/11/11</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>软件卓越1301</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td>2015/11/12</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>软件卓越1301</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td>2015/11/13</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>软件卓越1301</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td>2015/11/14</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>软件卓越1301</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td>2015/11/15</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>信息安全1301</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td>2015/11/16</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130000</td>
+											<td>张三</td>
+											<td>信息安全1302</td>
+											<td>18380580000</td>
+											<td>东9A111</td>
+											<td>2015/11/17</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130001</td>
+											<td>李四</td>
+											<td>医学影像1301</td>
+											<td>18380580001</td>
+											<td>东6A111</td>
+											<td>2015/11/18</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+										<tr>
+											<td>20130002</td>
+											<td>王五</td>
+											<td>医学影像1302</td>
+											<td>18380580003</td>
+											<td>东6A112</td>
+											<td>2015/11/18</td>
+											<td><a class="btn btn-danger" href="#" role="button">删除&raquo;</a></td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								<div>
+								<ul class="pagination pagination"  id="page">
+                                  <li id="preId" ><a href="#">&laquo;上一页</a></li>
+                                  <li id="nextId"><a href="#">下一页&raquo;</a></li>
+                                </ul>
+                                </div>
+                                <div>
+								<p>
+									<a class="btn  btn-danger" href="#" role="button" type="button" id="addOneInfo">添加记录&raquo;</a>
+								</p>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/myjs.js"></script>	
+	<script>
+	
+	$(document).ready(function(){
+	$.ajax({ 
+	    type: "post", 
+		url: '/sixthgroup/specialInfoClassController/selectAll.do',
+		dataType: "json",
+		async: false,
+		success: function(data){
+			if (data.result) { 
+				if(data.list)
+					{
+					$("#speTypeList1").empty();
+					for(var i=0;i<data.list.length;i++)
+						{
+						    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+						}
+					$("#speTypeList2").empty();
+					for(var i=0;i<data.list.length;i++)
+						{
+						    $("#speTypeList2").append("<li title="+data.list[i].spclId+"><a href='#'><span class='badge pull-right newInfo'></span>"+fun2(data.list[i].spclId)+"<span>"+data.list[i].spclName+"</span></a></li>");
+						}
+				}
+			}
+		},
+		error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		},     
+	});
+	
+	
+	var html=sessionStorage.username+"<b class='caret'></b>";
+	  $("#userId").html(html);
+	  
+			$.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/gradeController/selectAll.do',
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if (data.result) { 
+						if(data.gradeList)
+							{
+							$("#classList1").empty();
+							for(var i=0;i<data.gradeList.length;i++)
+								{
+								    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+								}
+						}
+					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+	});
+	var fun2=function(typeId){
+		$.ajax({ 
+		    type: "post", 
+			url: '/sixthgroup/specialInfoController/getTheCount.do',
+			data:{
+				typeId:typeId,
+			},
+			dataType: "json",
+			async: false,
+			success: function(data){
+					if (data.result) { 
+						if(data.num){
+						return data.num;
+						}
+					}
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+	}
+	</script>
+    <script>
+    var TypeId;
+    var Str;
+	var PageId=1;
+	var Data_con;
+	$("#preId").click(function(){
+		PageId--;
+		if(PageId>=1){
+			getSpeciInfo();
+			show();
+			fun();
+		}
+	})
+	$("#nextId").click(function(){
+		PageId++;
+		if(PageId<=Data_con.maxPage){
+			getSpeciInfo();
+			show();
+			fun();
+		}
+	})
+	
+function getSpeciInfo(){
+	$.ajax({ 
+	    type: "post", 
+		url: '/sixthgroup/specialInfoController/selectByTypeId.do',
+		data:{
+			typeId:TypeId,
+			pageNum:PageId,
+			pageSize:2
+		},
+		dataType: "json",
+		async: false,
+		success: function(data){
+				if (data.result) { 
+					if(data.infoList)
+						{
+						
+						Data_con=data;
+					    $("#typeName").html(Str);
+					    
+					    if(Data_con){
+						     if(PageId>=Data_con.maxPage){
+					    	$("#nextId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#nextId").hasClass("disabled")){
+					    	$("#nextId").removeClass("disabled");
+					    	}
+					    }
+						
+						
+						if(1>=PageId){
+					    	$("#preId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#preId").hasClass("disabled")){
+					    	$("#preId").removeClass("disabled");
+					    	}
+					    }
+						}
+						
+					}
+				}
+		},
+		error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		},     
+	});
+	}
+		function show(){
+			$("#stuSpeciaInfo").children().remove();
+			
+			var htmlStr="<table class='table table-striped'><thead><tr><th>学号</th><th>姓名</th><th>班级</th><th>电话</th><th>寝室</th><th>时间</th><th>操作</th></tr></thead><tbody>";
+			for(var i=0;i<Data_con.infoList.length;i++){
+				
+				var en=Data_con.infoList[i];
+				htmlStr+="<tr title="+en.spinId+"><td>"+en.studNum+"</td><td>"+en.studName+"</td><td>"+en.gradName+"</td><td>"+en.studTel+"</td><td>"+en.studDorimitory+"</td><td>"+en.time+"</td><td><a class='btn btn-danger btn-delete' role='button' type='button'>删除&raquo;</a></td></tr>";
+				}
+				htmlStr+="</tbody> </table>"
+				$("#stuSpeciaInfo").append(htmlStr);
+		}
+		
+	$("document").ready(function(){
+		var obj=document.getElementById("classList1");
+
+		var classList=obj.getElementsByTagName("li");
+//			alert("1");		
+		var len=classList.length;
+		
+		for(var i=0;i<len;i++){
+			
+			classList[i].onclick=function(){
+					var cstr=this.firstChild.innerHTML;
+				var classId=this.getAttribute("title");
+				
+				window.location.href = "first.html#"+classId+"#"+cstr;	
+		}	
+	}
+		
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+				Str=this.firstChild.innerHTML;
+				TypeId=this.getAttribute("title");
+			 getSpeciInfo();
+			 show();
+			 fun();
+			}
+		}
+		
+		
+		var obj=document.getElementById("speTypeList2");
+		var infoList=obj.getElementsByTagName("li");	
+		var len=infoList.length;
+		
+		for(var i=0;i<len;i++){
+			infoList[i].onclick=function(){
+				Str=this.firstChild.lastChild.innerHTML;
+				TypeId=this.getAttribute("title");
+			getSpeciInfo();
+			show();
+			fun();
+// 			fun1(str);
+// 			fun2(typeId,str);
+			}
+		}
+	})
+	$("document").ready(function(){
+		var string=window.location.hash;
+		var strs=string.split("#"); 
+		TypeId=strs[1];
+		 Str=strs[2];
+		if(TypeId&&Str){
+		getSpeciInfo();
+		show();
+		fun();
+// 		fun1(str);
+// 		fun2(classId,str);
+		}
+	})
+	function fun1(spclId,str1,str2){
+		 $.ajax({ 
+			    type: "POST", 	
+				url: "/sixthgroup/specialInfoController/deleteOne.do",
+				data: {
+					spinId:spclId,
+				},
+				dataType: "json",
+				async: false,
+				success: function(data){
+					alert("删除成功！");
+ 					var log="删除学号为"+str1+"的学生在"+str2+"的"+$("#typeName").val()+"信息";
+ 					insertOperationLog(sessionStorage.userId,log);
+					 location.reload();
+				},
+				
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+	}
+	function fun(){
+		var obj=$(".btn-delete");
+		for(var i=0;i<obj.length;i++){
+			obj[i].onclick=function(){		
+			var spclId=$(this).parent().parent().attr("title");	
+			var str1=$(this).parent().parent().children().eq(0).text();
+			var str2=$(this).parent().parent().children().eq(5).text();
+			fun1(spclId,str1,str2);
+		}
+		}
+	}
+	$("document").ready(function(){
+		$("#addOneInfo").click(function(){
+			window.location.href = "add-specialInfo.html#"+TypeId+"#"+Str;
+		})
+	})
+	$("document").ready(function(){
+		var obj=document.getElementById("speTypeList2");
+		var infoList=obj.getElementsByTagName("li");	
+		var len=infoList.length;
+		Str=infoList[0].firstChild.lastChild.innerHTML;
+		TypeId=infoList[0].getAttribute("title");
+			getSpeciInfo();
+			show();
+			fun();
+	})
+	</script>	
+</body>
+</html>

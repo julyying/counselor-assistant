@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>class-meeting</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul></li>
+					<li><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="special-info.html">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId">20131309 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/user/logout/">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">操作日志</a></li>
+				</ul>
+
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">操作日志</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">操作日志记录</h3>
+							</div>
+
+							<div class="panel-body">
+							<div id="table-log">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>用户</th>
+											<th>操作</th>
+											<th>时间</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>20130000</td>
+
+											<td>登录系统</td>
+
+											<td>2015/11/11</td>
+
+										</tr>
+										<tr>
+											<td>20130001</td>
+
+											<td>添加学生学号为20131309</td>
+
+											<td>2015/11/12</td>
+
+										</tr>
+										<tr>
+											<td>20130002</td>
+
+											<td>添加晚归记录学号为20131301</td>
+
+											<td>2015/11/13</td>
+
+										</tr>
+										<tr>
+											<td>20130000</td>
+
+											<td>退出系统</td>
+
+											<td>2015/11/14</td>
+
+										</tr>
+										<tr>
+											<td>20130001</td>
+
+											<td>软件卓越1301</td>
+
+											<td>2015/11/15</td>
+
+										</tr>
+										<tr>
+											<td>20130002</td>
+
+											<td>信息安全1301</td>
+
+											<td>2015/11/16</td>
+
+										</tr>
+										<tr>
+											<td>20130000</td>
+
+											<td>信息安全1302</td>
+
+											<td>2015/11/17</td>
+
+										</tr>
+										<tr>
+											<td>20130001</td>
+
+											<td>医学影像1301</td>
+											<td>2015/11/18</td>
+
+										</tr>
+										<tr>
+											<td>20130002</td>
+
+											<td>医学影像1302</td>
+											<td>2015/11/18</td>
+
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								<div>
+								<ul class="pagination pagination" id="page">
+                  <li id="preId"><a href="#">&laquo;上一页</a></li>
+                  <li id="nextId"><a href="#">下一页&raquo;</a></li>
+                </ul>
+                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+$("document").ready(function(){
+		
+		$("#userId").html(sessionStorage.username+"<b class='caret'></b>");
+		
+		 $.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/gradeController/selectAll.do',
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if (data.result) { 
+						if(data.gradeList)
+							{
+							$("#classList1").empty();
+							for(var i=0;i<data.gradeList.length;i++)
+								{
+								    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a>"+data.gradeList[i].gradName+"</a></li>");							    
+								}
+							}
+						} 						
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+		  
+		  
+			$.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/specialInfoClassController/selectAll.do',
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if (data.result) { 
+						if(data.list)
+							{
+							$("#speTypeList1").empty();
+							for(var i=0;i<data.list.length;i++)
+								{
+								    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+								}
+						}
+					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+			
+	})
+	var Data_con;
+    var PageId=1;
+    $("#preId").click(function(){
+    	PageId--;
+    	if(PageId>=1){
+    		getLog();
+    		show();
+    	}
+    })
+    $("#nextId").click(function(){
+    	PageId++;
+    	if(PageId<=Data_con.maxPage){
+    		getLog();
+    		show();
+    	}
+    })
+    function getLog(){
+    	$.ajax({ 
+		    type: "post",   
+			url: '/sixthgroup/operationLogController/selectAll.do',
+			data: {
+				userId:sessionStorage.userId, 
+				pageNum:PageId,
+				pageSize:10
+			},
+			dataType: "json",
+			async: false,
+			success: function(data){
+					if (data.result) { 
+						Data_con=data;
+	
+						if(Data_con){
+						     if(PageId>=Data_con.maxPage){
+					    	$("#nextId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#nextId").hasClass("disabled")){
+					    	$("#nextId").removeClass("disabled");
+					    	}
+					    }
+						
+						
+						if(1>=PageId){
+					    	$("#preId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#preId").hasClass("disabled")){
+					    	$("#preId").removeClass("disabled");
+					    	}
+					    }
+						}
+						}
+					else{
+							alert("操作日志查看失败！");
+					}  
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});		
+    }
+    function show(){
+    	$("#table-log").children().remove();
+		
+		var htmlStr="<table class='table table-striped'><thead><tr><th>用户</th><th>操作</th><th>时间</th></tr></thead><tbody>";
+		for(var i=0;i<Data_con.operationList.length;i++){
+			
+			var en=Data_con.operationList[i];
+			htmlStr+="<tr><td>"+en.studName+"</td><td>"+en.oploContent+"</td><td>"+en.time+"</td></tr>";
+			}
+			htmlStr+="</tbody> </table>"
+			$("#table-log").append(htmlStr);
+    }
+	$("document").ready(function(){
+		var obj=document.getElementById("classList1");
+
+		var classList=obj.getElementsByTagName("li");	
+		var len=classList.length;
+		
+		for(var i=0;i<len;i++){
+			
+			classList[i].onclick=function(){
+					var str=this.firstChild.innerHTML;
+				var classId=this.getAttribute("title");
+				
+				window.location.href = "first.html#"+classId+"#"+str;	
+		}	
+	}
+	})
+	$(document).ready(function(){
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+ 			var str1=this.firstChild.innerHTML;
+			var typeId1=this.getAttribute("title");
+			window.location.href = "special-info.html#"+typeId1+"#"+str1;
+			}
+		}
+	})
+	 $(document).ready(function(){
+		 getLog();
+ 		show();	
+	});
+ </script>
+</body>
+</html>

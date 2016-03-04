@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.HistoryStudentMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.HistoryStudent" >
+    <id column="hist_id" property="histId" jdbcType="INTEGER" />
+    <result column="hist_studentid" property="histStudentid" jdbcType="INTEGER" />
+    <result column="hist_time" property="histTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    hist_id, hist_studentid, hist_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from historystudent
+    where hist_id = #{histId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from historystudent
+    where hist_id = #{histId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.HistoryStudent" >
+    insert into historystudent (hist_id, hist_studentid, hist_time
+      )
+    values (#{histId,jdbcType=INTEGER}, #{histStudentid,jdbcType=INTEGER}, #{histTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.HistoryStudent" >
+    insert into historystudent
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="histId != null" >
+        hist_id,
+      </if>
+      <if test="histStudentid != null" >
+        hist_studentid,
+      </if>
+      <if test="histTime != null" >
+        hist_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="histId != null" >
+        #{histId,jdbcType=INTEGER},
+      </if>
+      <if test="histStudentid != null" >
+        #{histStudentid,jdbcType=INTEGER},
+      </if>
+      <if test="histTime != null" >
+        #{histTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.HistoryStudent" >
+    update historystudent
+    <set >
+      <if test="histStudentid != null" >
+        hist_studentid = #{histStudentid,jdbcType=INTEGER},
+      </if>
+      <if test="histTime != null" >
+        hist_time = #{histTime,jdbcType=DATE},
+      </if>
+    </set>
+    where hist_id = #{histId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.HistoryStudent" >
+    update historystudent
+    set hist_studentid = #{histStudentid,jdbcType=INTEGER},
+      hist_time = #{histTime,jdbcType=DATE}
+    where hist_id = #{histId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 自己写的方法 -->
+  
+  <resultMap id="newMap" type="sixth.sixthgroup.model.HistoryStudent" >
+   <result column="stud_id" property="studId" jdbcType="INTEGER" /> 
+   <result column="stud_num" property="studNum" jdbcType="VARCHAR" />
+  	<result column="stud_name" property="studName" jdbcType="VARCHAR" />
+  	<result column="grad_name" property="gradName" jdbcType="VARCHAR" />
+  	<result column="stud_tel" property="studTel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="new_List" >
+   stud_id,stud_num,stud_name, grad_name,stud_tel
+  </sql>
+  <select id="selectPeopleToHold" resultMap="newMap">
+  		SELECT 
+  		<include refid="new_List" />
+		from student stu,grade grad
+		where stu.stud_id not in(
+		select his.hist_studentid
+		from historystudent his
+		) and grad.grad_id=stu.stud_gradeid;
+  </select>
+  
+  <resultMap id="aNewMap" type="sixth.sixthgroup.model.HistoryStudent" >
+   <result column="stud_id" property="studId" jdbcType="INTEGER" /> 
+   <result column="stud_num" property="studNum" jdbcType="VARCHAR" />
+  	<result column="stud_name" property="studName" jdbcType="VARCHAR" />
+  	<result column="grad_name" property="gradName" jdbcType="VARCHAR" />
+  	<result column="stud_tel" property="studTel" jdbcType="VARCHAR" />
+  	 <result column="hist_time" property="histTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="aNew_List" >
+   stud_id,stud_num,stud_name, grad_name,stud_tel,hist_time
+  </sql>
+  <select id="selectAll" resultMap="aNewMap">
+  		SELECT
+  		<include refid="aNew_List" />
+		from student stu,grade grad,historystudent his
+		where stu.stud_id=his.hist_studentid and stu.stud_gradeid=grad.grad_id
+		ORDER BY his.hist_time desc;
+  </select>
+</mapper>

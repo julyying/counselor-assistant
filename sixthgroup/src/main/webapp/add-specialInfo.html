@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>add-specialInfo</title>
+<script type="text/javascript" src="js/Calendar.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul></li>
+					<li><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown active"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="special-info.html">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId">20131309 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/user/logout/">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">记录:</a></li>
+				</ul>
+				<ul class="nav nav-sidebar" id="speTypeList2">
+
+					<li class="active"><a href="special-info.html"><span class="badge pull-right">42</span><span>晚归</span></a></li>
+					<li><a href="#"><span class="badge pull-right">12</span><span>旷课</span></a></li>
+					<li><a href="#"><span class="badge pull-right">8</span><span>请假</span></a></li>
+					<li><a href="#"><span class="badge pull-right">6</span><span>2+4活动</span></a></li>
+
+				</ul>
+
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">特殊信息</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="typeName">晚归</h3>
+							</div>
+							<div class="panel-body">
+							 <form class="form-horizontal" role="form">
+                              <div class="form-group">
+                                <label for="name" class="col-sm-1 control-label" >学号</label>
+                                <div class="col-sm-5">
+                                  <input type="text" class="form-control"  placeholder="学号" id="stuNum">
+                                </div>
+                              </div>
+                              <div class="form-group">                              
+                                <label for="idnumber" class="col-sm-1 control-label">时间</label>
+                                <div class="col-sm-5">
+                                  <input type="text" class="form-control"  placeholder="时间" id="times" onClick="new Calendar().show(this);">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-md-1 col-md-offset-3 ">
+                                    <p><a class="btn  btn-danger" href="#" role="button" type="button" id="saveInfo">保存&raquo;</a></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+								
+                               
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/myjs.js"></script>	
+	<script>
+
+	$(document).ready(function(){
+	$.ajax({ 
+	    type: "post", 
+		url: '/sixthgroup/specialInfoClassController/selectAll.do',
+		dataType: "json",
+		async: false,
+		success: function(data){
+			if (data.result) { 
+				if(data.list)
+					{
+					$("#speTypeList1").empty();
+					for(var i=0;i<data.list.length;i++)
+						{
+						    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+						}
+					$("#speTypeList2").empty();
+					for(var i=0;i<data.list.length;i++)
+						{
+						    $("#speTypeList2").append("<li title="+data.list[i].spclId+"><a href='#'><span class='badge pull-right'>"+12+"</span><span>"+data.list[i].spclName+"</span></a></li>");
+						}
+				}
+			}
+		},
+		error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		},     
+	});
+	
+	
+	var html=sessionStorage.username+"<b class='caret'></b>";
+	  $("#userId").html(html);
+	  
+			$.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/gradeController/selectAll.do',
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if (data.result) { 
+						if(data.gradeList)
+							{
+							$("#classList1").empty();
+							for(var i=0;i<data.gradeList.length;i++)
+								{
+								    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+								}
+						}
+					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+	});
+	
+	
+	 </script>
+    <script>
+    var TypeId;
+    var Str;
+	var PageId=1;
+	var Data_con;
+	$("#preId").click(function(){
+		PageId--;
+		if(PageId>=1){
+			getSpeciInfo();
+			show();
+			fun();
+		}
+	})
+	$("#nextId").click(function(){
+		PageId++;
+		if(PageId<=Data_con.maxPage){
+			getSpeciInfo();
+			show();
+			fun();
+		}
+	})
+	
+function getSpeciInfo(){
+	$.ajax({ 
+	    type: "post", 
+		url: '/sixthgroup/specialInfoController/selectByTypeId.do',
+		data:{
+			typeId:TypeId,
+			pageNum:PageId,
+			pageSize:2
+		},
+		dataType: "json",
+		async: false,
+		success: function(data){
+				if (data.result) { 
+					if(data.infoList)
+						{
+						
+						Data_con=data;
+					    $("#typeName").html(Str);
+					    
+					    if(Data_con){
+						     if(PageId>=Data_con.maxPage){
+					    	$("#nextId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#nextId").hasClass("disabled")){
+					    	$("#nextId").removeClass("disabled");
+					    	}
+					    }
+						
+						
+						if(1>=PageId){
+					    	$("#preId").addClass("disabled");
+					    }
+					    else{
+					    	if($("#preId").hasClass("disabled")){
+					    	$("#preId").removeClass("disabled");
+					    	}
+					    }
+						}
+						
+					}
+				}
+		},
+		error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		},     
+	});
+	}
+		function show(){
+			$("#stuSpeciaInfo").children().remove();
+			
+			var htmlStr="<table class='table table-striped'><thead><tr><th>学号</th><th>姓名</th><th>班级</th><th>电话</th><th>寝室</th><th>时间</th><th>操作</th></tr></thead><tbody>";
+			for(var i=0;i<Data_con.infoList.length;i++){
+				
+				var en=Data_con.infoList[i];
+				htmlStr+="<tr title="+en.spinId+"><td>"+en.studNum+"</td><td>"+en.studName+"</td><td>"+en.gradName+"</td><td>"+en.studTel+"</td><td>"+en.studDorimitory+"</td><td>"+en.time+"</td><td><a class='btn btn-danger btn-delete' role='button' type='button'>删除&raquo;</a></td></tr>";
+				}
+				htmlStr+="</tbody> </table>"
+				$("#stuSpeciaInfo").append(htmlStr);
+		}
+		
+	$("document").ready(function(){
+		var obj2=document.getElementById("classList1");
+
+		var classList2=obj2.getElementsByTagName("li");
+//			alert("1");		
+		var len2=classList2.length;
+		
+		for(var i=0;i<len2;i++){
+			
+			classList2[i].onclick=function(){
+					var cstr=this.firstChild.innerHTML;
+				var classId=this.getAttribute("title");
+				
+				window.location.href = "first.html#"+classId+"#"+cstr;	
+		}	
+	}
+		
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+				var str1=this.firstChild.innerHTML;
+				var typeId1=this.getAttribute("title");
+				window.location.href = "special-info.html#"+typeId1+"#"+str1;
+			}
+		}
+		
+		
+		var obj=document.getElementById("speTypeList2");
+		var infoList=obj.getElementsByTagName("li");	
+		var len=infoList.length;
+		
+		for(var i=0;i<len;i++){
+			infoList[i].onclick=function(){
+				var Str=this.firstChild.lastChild.innerHTML;
+				var TypeId=this.getAttribute("title");
+				window.location.href = "special-info.html#"+TypeId+"#"+Str;
+
+			}
+		}
+	})
+	 function returnId(){ 
+ 		  var studId="";
+ 		 $.ajax({ 
+			    type: "POST", 	
+				url: "/sixthgroup/studentController/selectStudByStudNum.do",
+				data: {
+					studNum: $("#stuNum").val(),
+				},
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if(data.result)
+						{
+						studId = data.student.studId;
+						}
+				},
+				async: false,
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+ 		 return studId;
+		  
+     }
+	$("document").ready(function(){
+		var string=window.location.hash;
+		var strs=string.split("#"); 
+		var typeId=strs[1];
+		var str=strs[2];
+		$("#typeName").html(str);
+		$("#saveInfo").click(function(){
+			var studId=returnId();
+			$.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/specialInfoController/insertOneInfo.do',
+				data:{
+					studentId:studId,
+					typeId:typeId,
+					times:$("#times").val(),
+				},
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if(data.result){
+						alert("信息添加成功！");
+						var log="添加"+$("#stuNum").val()+"的"+str+"记录";
+	 					insertOperationLog(sessionStorage.userId,log);
+	 					window.location.href = "special-info.html#"+typeId+"#"+str;
+					}
+					else{
+						alert("信息添加失败");
+					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+		})
+	})
+	</script>	
+</body>
+</html>

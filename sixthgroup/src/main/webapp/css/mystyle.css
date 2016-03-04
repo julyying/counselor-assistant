@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	padding-top: 50px;
+	padding-bottom: 40px;
+	color: #5a5a5a;
+}
+/* 下面是左侧导航栏的代码 */
+.sidebar {
+	position: fixed;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #ddd;
+	border-right: 1px solid #eee;
+	margin-right: 50px;
+}
+
+.main {
+	padding: 0 40px;
+}
+
+#nav_login {
+	padding-top: 5px;
+}
+
+#look-log {
+	color: red;
+}
+
+#class-metting-peo {
+	border: 1px #0066FF solid;
+	height: 600px;
+}
+
+#result {
+	margin-top: 40px;
+}
+
+.carousel {
+	height: 500px;
+	background-color: #000000;
+	margin-bottom: 50px;
+}
+
+.carousel .item {
+	height: 500px;
+	background-color: #000000;
+}
+
+.carouse .item img {
+	width: 100%;
+}
+
+#summary-container .col-md-4 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.myClass{
+	margin-left:0;
+	margin-right:0;
+	padding-left:0;
+	padding-right:0;}
+.sidbarFirst{
+		font-size:18px;
+		color:#333;
+	}

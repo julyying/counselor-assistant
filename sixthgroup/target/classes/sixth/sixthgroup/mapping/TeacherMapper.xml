@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.TeacherMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Teacher" >
+    <id column="teac_id" property="teacId" jdbcType="INTEGER" />
+    <result column="teac_academy" property="teacAcademy" jdbcType="INTEGER" />
+    <result column="teac_name" property="teacName" jdbcType="VARCHAR" />
+    <result column="teac_sex" property="teacSex" jdbcType="VARCHAR" />
+    <result column="teac_age" property="teacAge" jdbcType="INTEGER" />
+    <result column="teac_tel" property="teacTel" jdbcType="INTEGER" />
+    <result column="teac_qq" property="teacQq" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    teac_id, teac_academy, teac_name, teac_sex, teac_age, teac_tel, teac_qq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from teacher
+    where teac_id = #{teacId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from teacher
+    where teac_id = #{teacId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Teacher" >
+    insert into teacher (teac_id, teac_academy, teac_name, 
+      teac_sex, teac_age, teac_tel, 
+      teac_qq)
+    values (#{teacId,jdbcType=INTEGER}, #{teacAcademy,jdbcType=INTEGER}, #{teacName,jdbcType=VARCHAR}, 
+      #{teacSex,jdbcType=VARCHAR}, #{teacAge,jdbcType=INTEGER}, #{teacTel,jdbcType=INTEGER}, 
+      #{teacQq,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Teacher" >
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teacId != null" >
+        teac_id,
+      </if>
+      <if test="teacAcademy != null" >
+        teac_academy,
+      </if>
+      <if test="teacName != null" >
+        teac_name,
+      </if>
+      <if test="teacSex != null" >
+        teac_sex,
+      </if>
+      <if test="teacAge != null" >
+        teac_age,
+      </if>
+      <if test="teacTel != null" >
+        teac_tel,
+      </if>
+      <if test="teacQq != null" >
+        teac_qq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teacId != null" >
+        #{teacId,jdbcType=INTEGER},
+      </if>
+      <if test="teacAcademy != null" >
+        #{teacAcademy,jdbcType=INTEGER},
+      </if>
+      <if test="teacName != null" >
+        #{teacName,jdbcType=VARCHAR},
+      </if>
+      <if test="teacSex != null" >
+        #{teacSex,jdbcType=VARCHAR},
+      </if>
+      <if test="teacAge != null" >
+        #{teacAge,jdbcType=INTEGER},
+      </if>
+      <if test="teacTel != null" >
+        #{teacTel,jdbcType=INTEGER},
+      </if>
+      <if test="teacQq != null" >
+        #{teacQq,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Teacher" >
+    update teacher
+    <set >
+      <if test="teacAcademy != null" >
+        teac_academy = #{teacAcademy,jdbcType=INTEGER},
+      </if>
+      <if test="teacName != null" >
+        teac_name = #{teacName,jdbcType=VARCHAR},
+      </if>
+      <if test="teacSex != null" >
+        teac_sex = #{teacSex,jdbcType=VARCHAR},
+      </if>
+      <if test="teacAge != null" >
+        teac_age = #{teacAge,jdbcType=INTEGER},
+      </if>
+      <if test="teacTel != null" >
+        teac_tel = #{teacTel,jdbcType=INTEGER},
+      </if>
+      <if test="teacQq != null" >
+        teac_qq = #{teacQq,jdbcType=INTEGER},
+      </if>
+    </set>
+    where teac_id = #{teacId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Teacher" >
+    update teacher
+    set teac_academy = #{teacAcademy,jdbcType=INTEGER},
+      teac_name = #{teacName,jdbcType=VARCHAR},
+      teac_sex = #{teacSex,jdbcType=VARCHAR},
+      teac_age = #{teacAge,jdbcType=INTEGER},
+      teac_tel = #{teacTel,jdbcType=INTEGER},
+      teac_qq = #{teacQq,jdbcType=INTEGER}
+    where teac_id = #{teacId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>class-manage</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul>
+					</li>
+					<li class="active"><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="special-info.html">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId">20131309 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="login.html">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">班级账号:</a></li>
+				</ul>
+				<ul class="nav nav-sidebar" id="classUser">
+					<li class="active"><a href="class-info.html">软件卓越1301班</a></li>
+					<li><a href="#">信息安全1301班</a></li>
+					<li><a href="#">信息安全1302班</a></li>
+					<li><a href="#">信息安全1303班</a></li>
+					<li><a href="#">信息安全1304班</a></li>
+					<li><a href="#">信息安全1305班</a></li>
+					<li><a href="#">医学影像1301班</a></li>
+					<li><a href="#">医学影像1302班</a></li>
+					<li><a href="class-manage.html" id="look-log">添加班级账号</a></li>
+				</ul>
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">班级账号管理</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">创建班级账号</h3>
+							</div>
+							<div class="panel-body row">
+								<div class="col-sm-9">
+									<form role="form">
+										<div class="form-group has-success ">
+											<label class="  control-label" for="class-name">班级名称:</label>
+											<select class="form-control" id="class-name">
+												<option>软件卓越1301班</option>
+												<option>信息安全1301班</option>
+												<option>信息安全1302班</option>
+												<option>信息安全1303班</option>
+												<option>信息安全1304班</option>
+												<option>信息安全1305班</option>
+												<option>医学影像1301班</option>
+												<option>医学影像1302班</option>
+											</select>
+
+										</div>
+										<div class="form-group has-success has-feedback">
+											<label class="  control-label" for="inputSuccess1">用户名:</label>
+
+											<input type="text" class=" form-control" id="username"
+												placeholder="用户名"> 
+
+										</div>
+
+
+										<div class="form-group has-success has-feedback" id="password1Div">
+											<label class="control-label" for="inputError1">密码:</label> <input
+												type="text" class="form-control" id="password1"
+												placeholder="密码"> 
+										</div>
+                                        <div class="form-group has-success has-feedback" id="password2Div">
+											<label class="control-label" for="inputError1" id="repeatpassword">重复密码:</label> <input
+												type="text" class="form-control" id="password2"
+												placeholder="重复密码"> 
+										</div>
+										<div class="form-group has-success has-feedback">
+											<label class="  control-label" for="inputSuccess1">拥有该账户学生姓名:</label>
+
+											<input type="text" class=" form-control" id="stuName"
+												placeholder="拥有该账户学生姓名">
+
+										</div>
+                                        <div class="form-group has-success has-feedback">
+                  <label class="  control-label" for="inputSuccess1">学号</label>
+                  
+                  <input type="text" class=" form-control" id="stuNum" placeholder="学号" >
+            
+                  
+                  </div>
+									</form>
+									<p>
+										<a class="btn  btn-danger" href="#" role="button" id="addClassUser">添加</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/myjs.js"></script>
+    <script>
+$(document).ready(function(){
+
+	
+	 $("#userId").html(sessionStorage.username+"<b class='caret'></b>");
+	
+	 $("#password2").keyup(function() {
+		 alert("1223");
+	 if($("#password1").val()!== $("#password2".val())) {
+		 $("#password1Div").removeClass().addClass("form-group has-error has-feedback");
+//		 $("#password1").children("input:last-child").remove();
+		 $("#password1Div").append("<span class='glyphicon glyphicon-remove form-control-feedback' id='resultLogo'></span>");
+		 $("#password2Div").removeClass().addClass("form-group has-error has-feedback");
+//		 $("#password1").children("input:last-child").remove();
+		 $("#password2Div").append("<span class='glyphicon glyphicon-remove form-control-feedback' id='resultLogo'></span>");
+			 }
+	 });
+	  
+	  
+	  $.ajax({ 
+		    type: "post", 
+			url: '/sixthgroup/gradeController/selectAll.do',
+			dataType: "json",
+			async: false,
+			success: function(data){
+				if (data.result) { 
+					if(data.gradeList)
+						{
+						$("#classList1").empty();
+						$("#class-name").empty();
+						for(var i=0;i<data.gradeList.length;i++)
+							{
+							    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a>"+data.gradeList[i].gradName+"</a></li>");
+							    $("#class-name").append("<option value="+data.gradeList[i].gradId+">"+data.gradeList[i].gradName+"</li>");						    
+							}
+						}
+					} 						
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+	  
+	  
+		$.ajax({ 
+		    type: "post", 
+			url: '/sixthgroup/specialInfoClassController/selectAll.do',
+			dataType: "json",
+			async: false,
+			success: function(data){
+				if (data.result) { 
+					if(data.list)
+						{
+						$("#speTypeList1").empty();
+						for(var i=0;i<data.list.length;i++)
+							{
+							    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+							}
+					}
+				}
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+		
+
+	  
+	  
+	  
+	  $.ajax({ 
+		    type: "POST", 	
+			url: "/sixthgroup/userController/selectAll.do",
+			dataType: "json",
+			success: function(data){
+				
+				if (data.result) { 
+					$("#classUser").empty();
+					for(var i=0;i<data.ClassAccountList.length;i++)
+					{					  
+					    $("#classUser").append("<li title="+data.ClassAccountList[i].userId+"><a href='class-info.html'>"+data.ClassAccountList[i].gradName+"</a></li>");					   
+					}
+				}
+					
+				 else {
+					alert("error");
+				}  
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+	  
+ 	  function returnId(){ 
+ 		  var studId="";
+ 		 $.ajax({ 
+			    type: "POST", 	
+				url: "/sixthgroup/studentController/selectStudByStudNum.do",
+				data: {
+					studNum: $("#stuNum").val(),
+				},
+				dataType: "json",
+				success: function(data){
+					if(data.result)
+						{
+						studId = data.student.studId;
+						}
+				},
+				async: false,
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+ 		 return studId;
+		  
+     }	
+	 $("#addClassUser").click(function(){ 
+		var studId=returnId();	
+		$.ajax({ 
+		    type: "POST", 	
+			url: "/sixthgroup/userController/insertClassAccount.do",
+			data: {
+				loginname: $("#username").val(),
+				password: $("#password1").val(), 
+				userpower:2,
+				classId: $("#class-name").val(),
+				studentId:studId
+				
+			},
+			async: false,
+			dataType: "json",
+			success: function(data){
+				if (data.result) { 
+					alert("添加班级账号成功！");
+					var log="添加班级"+$("#class-name").val()+"给"+studId+"管理";
+ 					insertOperationLog(sessionStorage.userId,log);
+ 					location.reload();
+				} else {
+					alert("error");
+				}  
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+	});
+
+});
+$("document").ready(function(){
+	var obj=document.getElementById("classList1");
+
+	var classList=obj.getElementsByTagName("li");
+//		alert("1");		
+	var len=classList.length;
+	
+	for(var i=0;i<len;i++){
+		
+		classList[i].onclick=function(){
+				var str=this.firstChild.innerHTML;
+			var classId=this.getAttribute("title");
+			
+			window.location.href = "first.html#"+classId+"#"+str;	
+	}	
+}
+})
+$(document).ready(function(){
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+ 			var str1=this.firstChild.innerHTML;
+			var typeId1=this.getAttribute("title");
+			window.location.href = "special-info.html#"+typeId1+"#"+str1;
+			}
+		}
+	})
+</script>
+</body>
+</html>

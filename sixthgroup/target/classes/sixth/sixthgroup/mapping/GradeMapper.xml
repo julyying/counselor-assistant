@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.GradeMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Grade" >
+    <id column="grad_id" property="gradId" jdbcType="INTEGER" />
+    <result column="grad_name" property="gradName" jdbcType="VARCHAR" />
+    <result column="grad_academy" property="gradAcademy" jdbcType="INTEGER" />
+    <result column="grad_counselor" property="gradCounselor" jdbcType="INTEGER" />
+    <result column="grad_monitor" property="gradMonitor" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    grad_id, grad_name, grad_academy, grad_counselor, grad_monitor
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from grade
+    where grad_id = #{gradId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from grade
+    where grad_id = #{gradId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Grade" >
+    insert into grade (grad_id, grad_name, grad_academy, 
+      grad_counselor, grad_monitor)
+    values (#{gradId,jdbcType=INTEGER}, #{gradName,jdbcType=VARCHAR}, #{gradAcademy,jdbcType=INTEGER}, 
+      #{gradCounselor,jdbcType=INTEGER}, #{gradMonitor,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Grade" >
+    insert into grade
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gradId != null" >
+        grad_id,
+      </if>
+      <if test="gradName != null" >
+        grad_name,
+      </if>
+      <if test="gradAcademy != null" >
+        grad_academy,
+      </if>
+      <if test="gradCounselor != null" >
+        grad_counselor,
+      </if>
+      <if test="gradMonitor != null" >
+        grad_monitor,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gradId != null" >
+        #{gradId,jdbcType=INTEGER},
+      </if>
+      <if test="gradName != null" >
+        #{gradName,jdbcType=VARCHAR},
+      </if>
+      <if test="gradAcademy != null" >
+        #{gradAcademy,jdbcType=INTEGER},
+      </if>
+      <if test="gradCounselor != null" >
+        #{gradCounselor,jdbcType=INTEGER},
+      </if>
+      <if test="gradMonitor != null" >
+        #{gradMonitor,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Grade" >
+    update grade
+    <set >
+      <if test="gradName != null" >
+        grad_name = #{gradName,jdbcType=VARCHAR},
+      </if>
+      <if test="gradAcademy != null" >
+        grad_academy = #{gradAcademy,jdbcType=INTEGER},
+      </if>
+      <if test="gradCounselor != null" >
+        grad_counselor = #{gradCounselor,jdbcType=INTEGER},
+      </if>
+      <if test="gradMonitor != null" >
+        grad_monitor = #{gradMonitor,jdbcType=INTEGER},
+      </if>
+    </set>
+    where grad_id = #{gradId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Grade" >
+    update grade
+    set grad_name = #{gradName,jdbcType=VARCHAR},
+      grad_academy = #{gradAcademy,jdbcType=INTEGER},
+      grad_counselor = #{gradCounselor,jdbcType=INTEGER},
+      grad_monitor = #{gradMonitor,jdbcType=INTEGER}
+    where grad_id = #{gradId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 自己写的方法 -->
+  <select id="selectByClassName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from grade
+    where grad_name = #{gradName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from grade
+  </select>
+</mapper>

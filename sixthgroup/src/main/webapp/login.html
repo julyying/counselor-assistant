@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>辅导员助手-login</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<style type="text/css">
+body {
+	padding-top: 100px;
+	padding-bottom: 40px;
+	background-color: #333;
+}
+
+.form-signin {
+	max-width: 300px;
+	padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin input[type="text"], .form-signin input[type="password"] {
+	font-size: 16px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Please login in</h2>
+			<input type="text" class="input-block-level" id="username"
+				placeholder="User name"> <input type="password"
+				class="input-block-level" id="password" placeholder="Password">
+			<p id="loginResult"></p>
+			<label class="checkbox"> <input type="checkbox"
+				value="remember-me"> Remember me
+			</label>
+			<button class="btn btn-large btn-primary" type="button" id="login">login
+				in</button>
+		</form>
+
+	</div>
+	<!-- /container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/myjs.js"></script>
+	<script>
+	var operatStr;
+	  $(document).ready(function(){
+		  var flag=0;
+			 $("#login").click(function(){ 
+				$.ajax({ 
+				    type: "post",   
+					url: '/sixthgroup/userController/selectUserByNameAndPassword.do',
+					data: {
+						loginname:$("#username").val(), 
+						password: $("#password").val(),
+						bmp:"123"
+					},
+					dataType: "json",
+					async: false,
+					success: function(data){
+						if (data.result) {
+							operatStr="登录系统";
+							
+							sessionStorage.setItem("username", data.user.userName); //store the value with a key as 
+							sessionStorage.setItem("userPower", data.user.userPower);
+							sessionStorage.setItem("userId", data.user.userId);
+// 							insertOperationLog(sessionStorage.username,operatStr);
+                            str="登录系统";
+                            flag=1;
+							window.location.href="index0.html";	
+							
+						}else{
+								$("#loginResult").html("账号或用户名错误！");
+							}  
+					},
+					error: function(jqXHR){     
+					   alert("发生错误：" + jqXHR.status);  
+					},     
+				});
+				if(flag){
+				insertOperationLog(sessionStorage.userId,str);
+				}
+			});
+			 
+		});
+ </script>
+
+</body>
+</html>

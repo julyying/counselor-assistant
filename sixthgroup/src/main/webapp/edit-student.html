@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>first-detail</title>
+<script type="text/javascript" src="js/Calendar.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+	<div class="navbar navbar-defualt navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target=".test">
+					<span class="sr-only">Toggle Navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">辅导员助手</a>
+			</div>
+			<div class="collapse navbar-collapse test" id="demo-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index0.html">首页</a></li>
+					<li class="dropdown active"><a href="first.html"
+						data-toggle="dropdown" class="dropdown-toggle">班级<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="classList1">
+							<li class="active"><a href="first.html">软件卓越1301班</a></li>
+							<li><a href="#tab-firefox1">信息安全1301班</a></li>
+							<li><a href="#tab-firefox2">信息安全1302班</a></li>
+							<li><a href="#tab-firefox3">信息安全1303班</a></li>
+							<li><a href="#tab-firefox4">信息安全1304班</a></li>
+							<li><a href="#tab-firefox5">信息安全1305班</a></li>
+							<li><a href="#tab-safari">医学影像1301班</a></li>
+							<li><a href="#tab-opera">医学影像1301班</a></li>
+						</ul></li>
+					<li><a href="class-manage.html">班级账号</a></li>
+					<li class="dropdown"><a href="special-info.html"
+						data-toggle="dropdown" class="dropdown-toggle">特殊信息<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" id="speTypeList1">
+							<li><a href="#tab-chrome">晚归</a></li>
+							<li><a href="#tab-firefox">请假</a></li>
+							<li><a href="#tab-safari">旷课</a></li>
+							<li><a href="#tab-opera">2+4活动</a></li>
+						</ul></li>
+					<li><a href="class-meeting.html">大班会</a></li>
+					<li><a href="work-arrangement.html">工作安排</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+				</ul>
+				<!--<form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="用户名...">
+          </input>
+          <input type="password" class="form-control" placeholder="密码...">
+          </input>
+        </div>
+        <button class="btn btn-default" type="submit" href="#">登录</button>
+      </form> -->
+				<div class="pull-right" id="nav_login">
+					<ul class="nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" id="userId">20131309 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/user/logout/">logout</a></li>
+								<li><a href="log.html">操作日志</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="pull-right" id = "nav_login">
+            <ul class="nav">
+                <li class="dropdown">
+                  
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户名20131309 <b class="caret"></b></a>
+                  
+                  <ul class="dropdown-menu">
+                    
+                    
+                      <li><a href="/user/logout/">logout</a></li>
+                    
+                  </ul>
+                </li>
+              </ul>
+          </div> -->
+			<!--end of dropdown-->
+		</div>
+	</div>
+
+	<!—自适应布局-->
+	<div class="container-fluid">
+		<div class="row">
+			<!—左侧导航栏-->
+
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="#" class="sidbarFirst">班级账号:</a></li>
+				</ul>
+				<ul class="nav nav-sidebar" id="classList2">
+					<li class="active"><a href="class-info.html">软件卓越1301班</a></li>
+					<li><a href="#">信息安全1301班</a></li>
+					<li><a href="#">信息安全1302班</a></li>
+					<li><a href="#">信息安全1303班</a></li>
+					<li><a href="#">信息安全1304班</a></li>
+					<li><a href="#">信息安全1305班</a></li>
+					<li><a href="#">医学影像1301班</a></li>
+					<li><a href="#">医学影像1302班</a></li>
+					<li><a href="class-manage.html" id="look-log">添加班级</a></li>
+				</ul>
+			</div>
+			<!—右侧管理控制台-->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header ">详细信息</h1>
+				<div class="row">
+					<div class="col-md-11 ">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="className">卓越软软件1301</h3>
+							</div>
+							<div class="panel-body">
+								<form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label for="name" class="col-sm-1 control-label myClass" >姓名</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="name" placeholder="姓名">
+                    </div>
+                    <label for="idnumber" class="col-sm-1 control-label myClass">学号</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="idnumber" placeholder="学号">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                   <label for="sex" class="col-sm-1 control-label myClass">性别</label>
+                    <div class="col-sm-5">
+                      <label class="radio-inline">
+                        <input type="radio" value="option1" name="sex">男性 
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" value="option2" name="sex">女性
+                      </label>
+                    </div>
+                    <label for="nation" class="col-sm-1 control-label myClass">民族</label>
+                    <div class="col-sm-5">
+                      <select class="form-control"id="nation"> 
+                        <option>汉族</option><option>蒙古族</option><option>回族</option><option>藏族</option><option>维吾尔族</option><option>苗族</option><option>彝族</option><option>壮族</option><option>布依族</option><option>朝鲜族</option><option>满族</option><option>侗族</option><option>瑶族</option><option>白族</option><option>土家族</option><option>哈尼族族</option><option>哈萨克族</option><option>傣族</option><option>黎族</option><option>僳僳佤族</option><option>畲族</option><option>高山族</option><option>拉祜族</option><option>水族</option><option>东乡族</option><option>纳西族</option><option>景颇族</option><option>柯尔克孜族</option><option>土族</option><option>达斡尔族</option><option>仫佬族</option><option>羌族</option><option>布朗族</option><option>撒拉族</option><option>毛南族</option><option>仡佬族</option><option>锡伯族</option><option>阿昌族</option><option>普米族</option><option>塔吉克族</option><option>怒族</option><option>乌孜别克族</option><option>俄罗斯族</option><option>鄂温克族</option><option>德昂族</option><option>保安族</option><option>裕固族</option><option>京族</option><option>塔塔尔族</option><option>独龙族</option><option>鄂伦春族</option><option>赫哲族</option><option>门巴族</option><option>珞巴族</option><option>基诺族</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="birthdate" class="col-sm-1 control-label myClass">出生日期</label>
+                    <div class="col-sm-5">
+                     <input type="text" class="form-control" id="stuBron" placeholder="出生日期" onClick="new Calendar().show(this);">
+                    
+                    </div>
+                   <label for="dormitory" class="col-sm-1 control-label myClass">寝室</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="dormitory" placeholder="寝室">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="id" class="col-sm-1 control-label myClass">身份证号</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="idnum" placeholder="身份证号">
+                    </div>
+                    
+                    <label for="banknumber" class="col-sm-1 control-label myClass">农行卡号</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="banknumber" placeholder="农行卡号">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="phonenumber" class="col-sm-1 control-label myClass">电话</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="phonenumber" placeholder="电话">
+                    </div>
+                    <label for="qq" class="col-sm-1 control-label myClass">QQ</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="qq" placeholder="QQ">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="parentname" class="col-sm-1 control-label myClass">家长姓名</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="parentname" placeholder="家长姓名">
+                    </div>
+                    <label for="parentnumber" class="col-sm-1 control-label myClass">家长电话</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="parentnumber" placeholder="家长电话">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="address" class="col-sm-1 control-label myClass">家庭住址</label>
+                    <div class="col-sm-11">
+                      <input type="text" class="form-control" id="address" placeholder="家庭住址">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1 col-md-offset-5 ">
+                        <p><a class="btn  btn-danger" href="#" role="button" type="button" id="saveInfo">保存&raquo;</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="about">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">关于</h4>
+				</div>
+				<div class="modal-body">
+					<p>这是yby制作的辅导员助手网页框架~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/myjs.js"></script>	
+	<script>
+	$(document).ready(function(){
+	$.ajax({ 
+	    type: "post", 
+		url: '/sixthgroup/specialInfoClassController/selectAll.do',
+		dataType: "json",
+		async: false,
+		success: function(data){
+			if (data.result) { 
+				if(data.list)
+					{
+					$("#speTypeList1").empty();
+					for(var i=0;i<data.list.length;i++)
+						{
+						    $("#speTypeList1").append("<li title="+data.list[i].spclId+"><a href='#'>"+data.list[i].spclName+"</a></li>");
+						}
+				}
+			}
+		},
+		error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		},     
+	});
+	
+	
+	var html=sessionStorage.username+"<b class='caret'></b>";
+	  $("#userId").html(html);
+	  
+			$.ajax({ 
+			    type: "post", 
+				url: '/sixthgroup/gradeController/selectAll.do',
+				dataType: "json",
+				async: false,
+				success: function(data){
+					if (data.result) { 
+						if(data.gradeList)
+							{
+							$("#classList1").empty();
+							for(var i=0;i<data.gradeList.length;i++)
+								{
+								    $("#classList1").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+								}
+							$("#classList2").empty();
+							for(var i=0;i<data.gradeList.length;i++)
+								{
+								$("#classList2").append("<li title="+data.gradeList[i].gradId+"><a href='#'>"+data.gradeList[i].gradName+"</a></li>");
+								}
+							}
+					}
+				},
+				error: function(jqXHR){     
+				   alert("发生错误：" + jqXHR.status);  
+				},     
+			});
+			
+			
+			var str=window.location.hash;
+			var strs=str.split("#"); 
+			var studNum=strs[1];
+			var string="学号为："+studNum;
+			$("#idnumber").attr("placeholder",studNum);
+			var str=strs[2];
+			var classId=strs[3];
+			$("#className").html(str+" 学号:"+studNum);
+			 $("#saveInfo").click(function(){ 		 
+				$.ajax({ 
+				    type: "POST", 	
+					url: "/sixthgroup/studentController/updateOne.do",
+					data: {
+						studGradeid:classId,
+						studName: $("#name").val(), 
+						studSex: $("#sex").val(), 
+						studAge:18,				 
+						studTel: $("#phonenumber").val(),
+						studQq: $("#qq").val(),
+						studAddress: $("#address").val(),
+						studIdcard: $("#idnum").val(),
+						studNum:studNum,
+						studBron: $("#stuBron").val(),
+						studBanknum: $("#banknumber").val(),
+						studNation: $("#nation").val(),
+						studDorimitory: $("#dormitory").val(),
+						studParentname: $("#parentname").val(),
+						studParenttel: $("#parentnumber").val()
+					},
+					dataType: "json",
+					success: function(data){
+						if(data.result){
+							alert("修改成功！");
+							var log="修改学号为"+studNum+"的学生信息";
+		 					insertOperationLog(sessionStorage.userId,log);
+						window.location.href = "first-detail.html#"+studNum+"#"+str+"#"+classId;
+						}
+                         else{
+                        	 alert("编辑失败：请确保输入信息完整！");
+                        	 window.location.href = "first-detail.html#"+studNum+"#"+str+"#"+classId;
+                         }
+					},
+					error: function(jqXHR){     
+					   alert("发生错误：" + jqXHR.status);  
+					},     
+				});
+			});
+	});
+	</script>
+	<script>
+	$("document").ready(function(){
+		var obj2=document.getElementById("classList1");
+
+		var classList2=obj2.getElementsByTagName("li");	
+		var len2=classList2.length;
+		for(var i=0;i<len2;i++){
+			classList2[i].onclick=function(){
+			var str2=this.firstChild.innerHTML;
+			var classId2=this.getAttribute("title");
+			window.location.href = "first.html#"+classId2+"#"+str2;	
+			}
+		}
+		
+		
+		var obj=document.getElementById("classList2");
+
+		var classList=obj.getElementsByTagName("li");	
+		var len=classList.length;
+		for(var i=0;i<len;i++){
+			classList[i].onclick=function(){
+			var str=this.firstChild.innerHTML;
+			var classId=this.getAttribute("title");
+			window.location.href = "first.html#"+classId+"#"+str;	
+			}
+		}
+
+		var obj1=document.getElementById("speTypeList1");
+		var infoList1=obj1.getElementsByTagName("li");	
+		var len1=infoList1.length;
+		for(var i=0;i<len1;i++){
+			infoList1[i].onclick=function(){
+				var str1=this.firstChild.innerHTML;
+			var typeId1=this.getAttribute("title");
+			window.location.href = "special-info.html#"+typeId1+"#"+str1;
+			}
+		}
+		
+		
+		
+// 		$("#editStudent").click(function(){
+// 			var str=window.location.hash;
+// 			var strs=str.split("#"); 
+// 			var studNum=strs[1];
+// 			var gradName=strs[2];
+// 			window.location.href = "edit-student.html#"+studNum+"#"+gradName;
+// 			})
+
+	});
+
+	</script>
+</body>
+</html>

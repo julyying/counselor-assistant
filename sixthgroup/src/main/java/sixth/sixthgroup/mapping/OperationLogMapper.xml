@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.OperationLogMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.OperationLog" >
+    <id column="oplo_id" property="oploId" jdbcType="INTEGER" />
+    <result column="oplo_peopleid" property="oploPeopleid" jdbcType="INTEGER" />
+    <result column="oplo_content" property="oploContent" jdbcType="VARCHAR" />
+    <result column="oplo_time" property="oploTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    oplo_id, oplo_peopleid, oplo_content, oplo_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from operationlog
+    where oplo_id = #{oploId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from operationlog
+    where oplo_id = #{oploId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.OperationLog" >
+    insert into operationlog (oplo_id, oplo_peopleid, oplo_content, 
+      oplo_time)
+    values (#{oploId,jdbcType=INTEGER}, #{oploPeopleid,jdbcType=INTEGER}, #{oploContent,jdbcType=VARCHAR}, 
+      #{oploTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.OperationLog" >
+    insert into operationlog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oploId != null" >
+        oplo_id,
+      </if>
+      <if test="oploPeopleid != null" >
+        oplo_peopleid,
+      </if>
+      <if test="oploContent != null" >
+        oplo_content,
+      </if>
+      <if test="oploTime != null" >
+        oplo_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oploId != null" >
+        #{oploId,jdbcType=INTEGER},
+      </if>
+      <if test="oploPeopleid != null" >
+        #{oploPeopleid,jdbcType=INTEGER},
+      </if>
+      <if test="oploContent != null" >
+        #{oploContent,jdbcType=VARCHAR},
+      </if>
+      <if test="oploTime != null" >
+        #{oploTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.OperationLog" >
+    update operationlog
+    <set >
+      <if test="oploPeopleid != null" >
+        oplo_peopleid = #{oploPeopleid,jdbcType=INTEGER},
+      </if>
+      <if test="oploContent != null" >
+        oplo_content = #{oploContent,jdbcType=VARCHAR},
+      </if>
+      <if test="oploTime != null" >
+        oplo_time = #{oploTime,jdbcType=DATE},
+      </if>
+    </set>
+    where oplo_id = #{oploId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.OperationLog" >
+    update operationlog
+    set oplo_peopleid = #{oploPeopleid,jdbcType=INTEGER},
+      oplo_content = #{oploContent,jdbcType=VARCHAR},
+      oplo_time = #{oploTime,jdbcType=DATE}
+    where oplo_id = #{oploId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 自己写的方法 -->
+  <resultMap id="newMap" type="sixth.sixthgroup.model.OperationLog" >
+    <id column="oplo_id" property="oploId" jdbcType="INTEGER" />
+    <result column="oplo_peopleid" property="oploPeopleid" jdbcType="INTEGER" />
+    <result column="oplo_content" property="oploContent" jdbcType="VARCHAR" />
+    <result column="oplo_time" property="oploTime" jdbcType="DATE" />
+    <result column="stud_name" property="studName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="newList" >
+    oplo_id, oplo_peopleid, oplo_content, oplo_time,stud_name
+  </sql>
+  
+  <select id="selectAll" resultMap="newMap" >
+    select 
+    <include refid="newList" />
+    from operationlog,student
+	where student.stud_id=operationlog.oplo_peopleid
+	ORDER BY oplo_time desc
+  </select>
+  <select id="selectByPeopleId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from operationlog
+    where oplo_peopleid = #{oploPeopleid,jdbcType=INTEGER}
+    ORDER BY oplo_time desc
+  </select>
+</mapper>

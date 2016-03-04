@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.SpecialInfoMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.SpecialInfo" >
+    <id column="spin_id" property="spinId" jdbcType="INTEGER" />
+    <result column="spin_studentid" property="spinStudentid" jdbcType="INTEGER" />
+    <result column="spin_classno" property="spinClassno" jdbcType="INTEGER" />
+     <result column="spin_time" property="spinTime" jdbcType="DATE" />
+      <result column="spin_isread" property="spinIsread" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spin_id, spin_studentid, spin_classno,spin_time,spin_isread
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from specialinfo
+    where spin_id = #{spinId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from specialinfo
+    where spin_id = #{spinId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.SpecialInfo" >
+    insert into specialinfo (spin_id, spin_studentid, spin_classno,spin_time
+      )
+    values (#{spinId,jdbcType=INTEGER}, #{spinStudentid,jdbcType=INTEGER}, #{spinClassno,jdbcType=INTEGER},
+    #{spinTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.SpecialInfo" >
+    insert into specialinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="spinId != null" >
+        spin_id,
+      </if>
+      <if test="spinStudentid != null" >
+        spin_studentid,
+      </if>
+      <if test="spinClassno != null" >
+        spin_classno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="spinId != null" >
+        #{spinId,jdbcType=INTEGER},
+      </if>
+      <if test="spinStudentid != null" >
+        #{spinStudentid,jdbcType=INTEGER},
+      </if>
+      <if test="spinClassno != null" >
+        #{spinClassno,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.SpecialInfo" >
+    update specialinfo
+    <set >
+      <if test="spinStudentid != null" >
+        spin_studentid = #{spinStudentid,jdbcType=INTEGER},
+      </if>
+      <if test="spinClassno != null" >
+        spin_classno = #{spinClassno,jdbcType=INTEGER},
+      </if>
+    </set>
+    where spin_id = #{spinId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.SpecialInfo" >
+    update specialinfo
+    set spin_isread=#{spinIsread,jdbcType=INTEGER}
+    where spin_id = #{spinId,jdbcType=INTEGER}
+  </update>
+  
+  
+  <!-- 自己写的方法 -->
+  <sql id="New_List" >
+    stud_name, stud_num,spin_time,grad_name,stud_tel,stud_dorimitory,spin_isread,spin_id
+  </sql>
+  
+  <resultMap id="NewMap" type="sixth.sixthgroup.model.SpecialInfo" >
+    <result column="stud_num" property="studNum" jdbcType="VARCHAR" />
+  	<result column="stud_name" property="studName" jdbcType="VARCHAR" />
+  	<result column="spin_time" property="spinTime" jdbcType="DATE" />
+  	<result column="grad_name" property="gradName" jdbcType="VARCHAR" />
+  	<result column="stud_tel" property="studTel" jdbcType="VARCHAR" />
+  	<result column="stud_dorimitory" property="studDorimitory" jdbcType="DATE" />
+  	<result column="spin_isread" property="spinIsread" jdbcType="INTEGER" />
+  	<result column="spin_id" property="spinId" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="selectByInfoType" resultMap="NewMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="New_List" />
+	from student st,specialinfo sp,grade gr
+	where sp.spin_classno=#{spinClassno,jdbcType=INTEGER}
+	and sp.spin_studentid=st.stud_id
+	and gr.grad_id=st.stud_gradeid;
+  </select>
+</mapper>

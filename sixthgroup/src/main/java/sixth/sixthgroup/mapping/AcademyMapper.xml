@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sixth.sixthgroup.dao.AcademyMapper" >
+  <resultMap id="BaseResultMap" type="sixth.sixthgroup.model.Academy" >
+    <id column="acad_id" property="acadId" jdbcType="INTEGER" />
+    <result column="acad_name" property="acadName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    acad_id, acad_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from academy
+    where acad_id = #{acadId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from academy
+    where acad_id = #{acadId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="sixth.sixthgroup.model.Academy" >
+    insert into academy (acad_id, acad_name)
+    values (#{acadId,jdbcType=INTEGER}, #{acadName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="sixth.sixthgroup.model.Academy" >
+    insert into academy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="acadId != null" >
+        acad_id,
+      </if>
+      <if test="acadName != null" >
+        acad_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="acadId != null" >
+        #{acadId,jdbcType=INTEGER},
+      </if>
+      <if test="acadName != null" >
+        #{acadName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="sixth.sixthgroup.model.Academy" >
+    update academy
+    <set >
+      <if test="acadName != null" >
+        acad_name = #{acadName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where acad_id = #{acadId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sixth.sixthgroup.model.Academy" >
+    update academy
+    set acad_name = #{acadName,jdbcType=VARCHAR}
+    where acad_id = #{acadId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 自己写的代码 -->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from academy
+  </select>
+  <select id="selectByName" resultMap="BaseResultMap">
+    select *
+    from academy
+    where acad_name = #{acadName,jdbcType=VARCHAR}
+  </select>
+</mapper>
